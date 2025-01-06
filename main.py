@@ -1,5 +1,6 @@
 def sort_on(dict):
     return dict["num"]
+
 def count_words(book):
     words = book.split()
     word_count = len(words)
@@ -13,6 +14,7 @@ def count_characters(file_contents):
         characters[character] = characters.get(character, 0) + 1
     print("------------------------")
     print("Character counts below")
+    print("------------------------")
     print(characters)
 
 def count_letters(file_contents):
@@ -21,8 +23,9 @@ def count_letters(file_contents):
         if(character.isalpha()):
             letter = character.lower()
             letters[letter] = letters.get(letter, 0) + 1
-    print("------------------------")
+    print("-----------------------------------")
     print("Letter counts below")
+    print("-----------------------------------")
     letter_list = [{"letter": k, "num": v} for k, v in letters.items()]
     letter_list.sort(reverse=True, key=sort_on)
     for entry in letter_list:
@@ -37,7 +40,7 @@ def main():
     print("-----------------------------------")
     print(f"total number of words in book {wc}")
     print("-----------------------------------")
-    count_characters(file_contents)
+    #count_characters(file_contents)
     count_letters(file_contents)
 
 main()
