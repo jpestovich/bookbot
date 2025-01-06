@@ -1,3 +1,5 @@
+def sort_on(dict):
+    return dict["num"]
 def count_words(book):
     words = book.split()
     word_count = len(words)
@@ -21,8 +23,14 @@ def count_letters(file_contents):
             letters[letter] = letters.get(letter, 0) + 1
     print("------------------------")
     print("Letter counts below")
-    print(letters)
-
+    letter_list = [{"letter": k, "num": v} for k, v in letters.items()]
+    letter_list.sort(reverse=True, key=sort_on)
+    for entry in letter_list:
+        print(f"The '{entry['letter']}' character was found {entry['num']} times")
+    #lista = list[letters]
+    #lista.sort(reverse=True, key=sort_on)
+    #print(letters)
+    
 def main():
     book = 'books/frankenstein.txt'
     with open(book) as f:
