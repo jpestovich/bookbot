@@ -27,9 +27,6 @@ def count_letters(file_contents):
     letter_list.sort(reverse=True, key=sort_on)
     for entry in letter_list:
         print(f"The '{entry['letter']}' character was found {entry['num']} times")
-    #lista = list[letters]
-    #lista.sort(reverse=True, key=sort_on)
-    #print(letters)
     
 def main():
     book = 'books/frankenstein.txt'
